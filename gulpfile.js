@@ -8,6 +8,21 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var connect = require('gulp-connect');
+var Proxy = require('gulp-connect-proxy');
+ 
+/*gulp.task('connect', function() {
+  connect.server({
+    root: './',
+    livereload: true,
+        middleware: function (connect, opt) {
+            opt.route = '/proxy';
+            var proxy = new Proxy(opt);
+            return [proxy];
+        }
+  });
+});
+*/
 
 // 检查脚本
 gulp.task('lint', function() {
@@ -21,23 +36,26 @@ gulp.task('lint', function() {
 
 // 编译Sass
 gulp.task('sass', function() {
-    gulp.src('./scss/*.scss')
+    gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css','./scss/*.scss'])
         .pipe(sass())
+        .pipe(concat('all.css'))
         .pipe(gulp.dest('./css'));
 });
 
 // 合并，压缩文件
 gulp.task('scripts', function() {
-    gulp.src('./js/*.js')
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('./dist'))
-        .pipe(rename('all.min.js'))
-        .pipe(babel({
+    gulp.src(['node_modules/jquery/dist/jquery.min.js','node_modules/bootstrap/dist/js/bootstrap.min.js','./js/*.js'])
+        /*.pipe(babel({
           presets: ['env']
-        }))
+        }))*/
+        .pipe(concat('all.js'))
+        .pipe(rename('all.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist'));
 });
+
+
+ 
 
 // 默认任务
 gulp.task('default', function(){

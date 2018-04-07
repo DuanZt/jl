@@ -1,17 +1,17 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run gulp
+  /usr/local/bin/node /usr/local/bin/yarn run gulp
 
 PATH: 
-  C:\Users\Administrator\Documents\cmder\bin;C:\Users\Administrator\Documents\cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Users\Administrator\Documents\cmder\vendor\conemu-maximus5;C:\Users\Administrator\Documents\cmder\vendor\conemu-maximus5\ConEmu;C:\Python27\;C:\Python27\Scripts;C:\Ruby24-x64\bin;C:\Ruby25-x64\bin;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files (x86)\Common Files\NetSarang;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Git\cmd;E:\wamp\bin\php\php5.6.25;C:\ProgramData\ComposerSetup\bin;C:\ProgramData\chocolatey\bin;;C:\Program Files\Git LFS;C:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_162\bin;C:\Users\Administrator\AppData\Roaming\Composer\vendor\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\share\vim\vim74;C:\Users\Administrator\Documents\cmder\
+  /usr/local/sbin:/usr/local/bin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  9.9.0
+  6.10.0
 
 Platform: 
-  win32 x64
+  darwin x64
 
 npm manifest: 
   {
@@ -30,7 +30,10 @@ npm manifest:
     "dependencies": {
       "babel-core": "^6.26.0",
       "babel-preset-env": "^1.6.1",
+      "bootstrap": "^4.0.0",
       "gulp-babel": "^7.0.1",
+      "gulp-connect-proxy": "^0.3.1",
+      "jquery": "^3.3.1",
       "jshint": "^2.9.5"
     }
   }
@@ -710,6 +713,10 @@ Lockfile:
     dependencies:
       hoek "4.x.x"
   
+  bootstrap@^4.0.0:
+    version "4.0.0"
+    resolved "http://registry.npm.taobao.org/bootstrap/download/bootstrap-4.0.0.tgz#ceb03842c145fcc1b9b4e15da2a05656ba68469a"
+  
   brace-expansion@^1.0.0, brace-expansion@^1.1.7:
     version "1.1.11"
     resolved "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -1134,6 +1141,10 @@ Lockfile:
       assign-symbols "^1.0.0"
       is-extendable "^1.0.1"
   
+  extend@^2.0.0:
+    version "2.0.1"
+    resolved "http://registry.npm.taobao.org/extend/download/extend-2.0.1.tgz#1ee8010689e7395ff9448241c98652bc759a8260"
+  
   extend@^3.0.0, extend@~3.0.0, extend@~3.0.1:
     version "3.0.1"
     resolved "https://registry.npmjs.org/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
@@ -1454,11 +1465,17 @@ Lockfile:
   
   gulp-concat@^2.6.1:
     version "2.6.1"
-    resolved "https://registry.npmjs.org/gulp-concat/-/gulp-concat-2.6.1.tgz#633d16c95d88504628ad02665663cee5a4793353"
+    resolved "http://registry.npm.taobao.org/gulp-concat/download/gulp-concat-2.6.1.tgz#633d16c95d88504628ad02665663cee5a4793353"
     dependencies:
       concat-with-sourcemaps "^1.0.0"
       through2 "^2.0.0"
       vinyl "^2.0.0"
+  
+  gulp-connect-proxy@^0.3.1:
+    version "0.3.1"
+    resolved "http://registry.npm.taobao.org/gulp-connect-proxy/download/gulp-connect-proxy-0.3.1.tgz#12897149711aca0c8a4ab20a0a225cd73c5dc22e"
+    dependencies:
+      extend "^2.0.0"
   
   gulp-jshint@^2.1.0:
     version "2.1.0"
@@ -1900,6 +1917,10 @@ Lockfile:
   isstream@~0.1.2:
     version "0.1.2"
     resolved "https://registry.npmjs.org/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+  
+  jquery@^3.3.1:
+    version "3.3.1"
+    resolved "http://registry.npm.taobao.org/jquery/download/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   
   js-base64@^2.1.8:
     version "2.4.3"
@@ -3373,14 +3394,16 @@ Lockfile:
 Trace: 
   Error: Command failed.
   Exit code: 1
-  Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c E:\wamp\www\gulp\node_modules\.bin\gulp
-  Directory: E:\wamp\www\gulp
+  Command: sh
+  Arguments: -c /Users/dt/Documents/jl/node_modules/.bin/gulp
+  Directory: /Users/dt/Documents/jl
   Output:
   
-      at ProcessTermError.MessageError (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at new ProcessTermError (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
-      at ChildProcess.emit (events.js:180:13)
-      at maybeClose (internal/child_process.js:936:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+      at ProcessTermError.Error (native)
+      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at emitTwo (events.js:106:13)
+      at ChildProcess.emit (events.js:191:7)
+      at maybeClose (internal/child_process.js:877:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
