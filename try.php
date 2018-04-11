@@ -262,6 +262,11 @@ $id = $db->insert ('try', $data);
 </div>
 
 
+<script type="text/javascript">
+	document.oncontextmenu = function(){
+                event.returnValue = false;
+            };
+</script>
 <script type="text/javascript" src="./dist/all.min.js"></script>
 	<img  style="CURSOR: pointer;position: fixed;
     right: 0;
