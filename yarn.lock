@@ -1433,6 +1433,13 @@ gulp-connect-proxy@^0.3.1:
   dependencies:
     extend "^2.0.0"
 
+gulp-html-tag-include@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/gulp-html-tag-include/download/gulp-html-tag-include-1.0.1.tgz#560ebe4c700132435841c58f65e8a9e3e189681e"
+  dependencies:
+    gulp-util "^3.0.1"
+    through2 "^0.6.3"
+
 gulp-jshint@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/gulp-jshint/-/gulp-jshint-2.1.0.tgz#bfaf927f78eee263c5bbac5f63e314d44a7bd41e"
@@ -1469,7 +1476,7 @@ gulp-uglify@^3.0.0:
     uglify-js "^3.0.5"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-util@^3.0, gulp-util@^3.0.0:
+gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.1:
   version "3.0.8"
   resolved "https://registry.npmjs.org/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -3081,7 +3088,7 @@ tar@^2.0.0:
     fstream "^1.0.2"
     inherits "2"
 
-through2@^0.6.1:
+through2@^0.6.1, through2@^0.6.3:
   version "0.6.5"
   resolved "https://registry.npmjs.org/through2/-/through2-0.6.5.tgz#41ab9c67b29d57209071410e1d7a7a968cd3ad48"
   dependencies:

@@ -91,7 +91,7 @@
           
         </li>
         <li>
-          <div class="dt"><a href="./try.php">试用申请</a></div>
+          <div class="dt"><a href="./try.html">试用申请</a></div>
           
         </li>
         <li>
@@ -112,17 +112,58 @@
 <div class="space"></div>
 
 
+<br>
+<br>
+<br>
 <div class="main">
 	<section>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2>公司简介</h2>
-        <p>蛟龙信息科技（杭州）有限公司（简称“蛟龙软件”，www.jlongsoft.com），是中国领先的大宗商品电子交易、物流仓储、供应链管理系统供应商！
 
- 公司团队20余年致力于打通大宗商品整个流通链条的系统开发，包括在线电子交易、仓储加工、物流运输、融资监控、供应链管理、保税仓单等软件的开发，产品适用于钢铁、有色、化工、生活物资、普货、电信、石油、煤炭等多个行业的管理。
 
-蛟龙凭借丰富的行业经验，以及产品技术优势，深得众多如中投保、建设银行、交通银行、华夏银行，民生银行、海康威视、大华等合作伙伴的青睐和支持，并建立长期合作关系。公司将继续深入对大宗商品行业整个流通环节系统的研发，完善交易，资金、仓储、物流的贯通，降低物流成本，以打造国内最优秀的大宗商品行业软件供应商为目标。</p>
+
+
+
+
+
+<?php require_once ('phplib/mysql/MysqliDb.php'); ?>
+
+
+
+<?php 
+
+$id = $_GET['id'];
+
+$db = new MysqliDb ('localhost', 'root', 'Dt337683', 'jl');
+$db->where ("id", $id);
+$news = $db->get('news')[0];
+
+
+
+
+
+?>
+
+<h1><?php echo $news['title']; ?></h1>
+<br>
+<h4><?php echo $news['auther'] ?> | <?php echo $news['date'] ?></h4>
+<br>
+<div class="content">
+	<p><?php echo $news['content'] ?></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      
       </div>
     </div>
   </div>
@@ -184,9 +225,7 @@
 
 
 <script type="text/javascript" src="./dist/all.min.js"></script>
-	<img  style="CURSOR: pointer;    position: fixed;
-    right: 0;
-    bottom: 100px;" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=337683617&o=smdsada.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:337683617:1 alt="联系我们">
+	<img  style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=337683617&o=smdsada.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:337683617:1 alt="联系我们">
 
 </body>
 </html>

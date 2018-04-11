@@ -194,7 +194,6 @@ a:hover .icon-microphone{background-position: -32px -32px;}
 .ws{width:1140px;margin-left:auto;margin-right:auto;}
 .ws{width:990px;}
 
-.row,
 .toolbar,
 .header,
 .banner,
@@ -777,3 +776,40 @@ html,body{
     height: 170px;  
     margin-top: -170px;  
 } 
+
+.logo .logo-text {
+    float: left;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 18px;
+    line-height: 22px;
+    color: #999999;
+    font-size: 12px;
+    width: 193px;
+}
+.carousel-indicators .active{
+	background:#f00;
+}
+
+.carousel-indicators li{
+	background:rgba(247,121,121,0.5);
+}
+.header {
+    height: 90px;
+    border-bottom: 4px solid #FF6600;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.space{
+	height:90px;
+	width:100%;
+}
+.news-logo {
+    width: 100%;
+}
+
+.summary a {
+    color: blue;
+}

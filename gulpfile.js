@@ -1,5 +1,6 @@
 // 引入 gulp
-var gulp = require('gulp'); 
+var gulp = require('gulp'),
+    include = require('gulp-html-tag-include');
 
 // 引入组件
 const babel = require('gulp-babel');
@@ -23,6 +24,15 @@ var Proxy = require('gulp-connect-proxy');
   });
 });
 */
+gulp.task('html-include', function() {
+    return gulp.src('./pages/*.html')
+        .pipe(include())
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('watch', ['html-include'], function() {
+    gulp.watch('./pages/*.html', ['html-include']);
+});
 
 // 检查脚本
 gulp.task('lint', function() {
@@ -59,7 +69,7 @@ gulp.task('scripts', function() {
 
 // 默认任务
 gulp.task('default', function(){
-    gulp.run('lint', 'sass', 'scripts');
+    gulp.run('lint', 'sass', 'scripts','watch');
 
     // 监听文件变化
     gulp.watch(['./js/*.js','./scss/*.scss'], function(){

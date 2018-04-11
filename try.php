@@ -1,3 +1,34 @@
+<?php 
+require_once 'phplib/securimage/securimage.php';
+ require_once ('phplib/mysql/MysqliDb.php'); 
+$image = new Securimage();
+$flag = isset($_POST['name'])&&isset($_POST['phone'])&&isset($_POST['danwei'])&&isset($_POST['address'])&&isset($_POST['captcha_code'])&&($image->check($_POST['captcha_code']) == true);
+
+
+if($flag){
+
+
+
+
+
+
+$db = new MysqliDb ('localhost', 'root', 'Dt337683', 'jl');
+
+$data = Array (
+	"name" => $_POST['name'],
+	"phone" => $_POST['phone'],
+	"danwei" => $_POST['danwei'],
+	"address" => $_POST['address'],
+);
+$id = $db->insert ('try', $data);
+
+
+
+
+
+}
+
+?>
 <html>
 <head>
     <title>Example include</title>
@@ -46,7 +77,6 @@
                   <div id="slideBox" class="slideBox">
                     <div class="bd">
                       <ul>
-                     	
 		                    <li style="display: none;"><a href="/product_10010010010130.html"><img src=""><div class="slideBox-title">供应链B2B</div></a></li>
 	                    
 		                    <li style="display: none;"><a href="/product_10010010010330.html"><img src=""><div class="slideBox-title">B2B招投标系统</div></a></li>
@@ -110,6 +140,8 @@
 </div>
 
 <div class="space"></div>
+<br>
+<br>
 
 
 <div class="main">
@@ -117,12 +149,59 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2>公司简介</h2>
-        <p>蛟龙信息科技（杭州）有限公司（简称“蛟龙软件”，www.jlongsoft.com），是中国领先的大宗商品电子交易、物流仓储、供应链管理系统供应商！
 
- 公司团队20余年致力于打通大宗商品整个流通链条的系统开发，包括在线电子交易、仓储加工、物流运输、融资监控、供应链管理、保税仓单等软件的开发，产品适用于钢铁、有色、化工、生活物资、普货、电信、石油、煤炭等多个行业的管理。
 
-蛟龙凭借丰富的行业经验，以及产品技术优势，深得众多如中投保、建设银行、交通银行、华夏银行，民生银行、海康威视、大华等合作伙伴的青睐和支持，并建立长期合作关系。公司将继续深入对大宗商品行业整个流通环节系统的研发，完善交易，资金、仓储、物流的贯通，降低物流成本，以打造国内最优秀的大宗商品行业软件供应商为目标。</p>
+
+
+<form id="try" action="try.php" method="post">
+	<h1>
+<?php if($flag){
+	echo '保存成功！';
+}else{ ?></h1>
+	<div class="form-group">
+	  <input name="name" class="form-control" value="<?php echo  isset($_POST['name'])?$_POST['name']:'' ?>"  placeholder="申请人">
+	</div>
+	<div class="form-group">
+	  <input name="phone" class="form-control"  value="<?php echo  isset($_POST['phone'])?$_POST['phone']:'' ?>" placeholder="联系电话">
+	</div>
+	<div class="form-group">
+	  <input name="danwei" class="form-control"  value="<?php echo  isset($_POST['danwei'])?$_POST['danwei']:'' ?>" placeholder="申请单位">
+	</div>
+	<div class="form-group">
+	  <input name="address" class="form-control"  value="<?php  echo isset($_POST['address'])?$_POST['address']:'' ?>" placeholder="地址">
+	</div>
+
+	<div class="form-group">
+
+    <?php
+        echo Securimage::getCaptchaHtml();
+    ?>
+	</div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+<?php
+
+	} ?>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
   </div>

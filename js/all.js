@@ -1,1 +1,3 @@
-$('.carousel').carousel();
+$('.carousel').map(function(){
+	$(this).carousel();
+});
