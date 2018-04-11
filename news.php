@@ -225,7 +225,9 @@ $news = $db->get('news')[0];
 
 
 <script type="text/javascript" src="./dist/all.min.js"></script>
-	<img  style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=337683617&o=smdsada.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:337683617:1 alt="联系我们">
+	<img  style="CURSOR: pointer;position: fixed;
+    right: 0;
+    bottom: 100px;" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=337683617&o=smdsada.com&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:337683617:1 alt="联系我们">
 
 </body>
 </html>
